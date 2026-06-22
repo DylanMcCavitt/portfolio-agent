@@ -3,6 +3,8 @@ import { localDev, placeholderAuth, vercelOidc, vercelSubject } from "eve/channe
 
 export default eveChannel({
   auth: [
+    // Visitor chat ingress only. Account/project MCP connections must not live
+    // on this public channel unless an admin-only path is added explicitly.
     // Open on localhost for `eve dev` and the REPL; ignored in production.
     localDev(),
     // Lets the portfolio web app call this agent from preview and production.
