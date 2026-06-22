@@ -6,6 +6,18 @@ Run the local Eve smoke suite with:
 npm run eval
 ```
 
+Run only the fit-check eval group with:
+
+```bash
+npm run eval -- fit-check
+```
+
+Run the deterministic fit-check policy/context smoke without a live model:
+
+```bash
+npm run smoke:fit-check
+```
+
 For CI, use:
 
 ```bash

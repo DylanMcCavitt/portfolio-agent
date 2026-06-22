@@ -1,6 +1,7 @@
 import { stat } from "node:fs/promises";
 import { join } from "node:path";
 
+import type { SendTurnPayload } from "eve/client";
 import { loadJson } from "eve/evals/loaders";
 import { z } from "zod";
 
@@ -123,6 +124,13 @@ const GroundingFixtureSetSchema = z
 
 export type GroundingFixture = z.infer<typeof GroundingFixtureSchema>;
 
+export interface FitCheckContext {
+  kind: "job-description";
+  jobDescription: string;
+  originalLength: number;
+  truncated: boolean;
+}
+
 const fixturePath = join(process.cwd(), "evals/data/grounding-fixtures.json");
 const fixtureStats = await stat(fixturePath);
 
@@ -163,6 +171,41 @@ export function groundedPrompt(fixture: GroundingFixture, question = fixture.mes
     "",
     `Visitor question: ${question}`,
   ].join("\n");
+}
+
+export function fitCheckTurn(
+  fixture: GroundingFixture,
+  jobDescription: string,
+  question = "How does Dylan fit this role based on the supplied portfolio context?",
+): SendTurnPayload {
+  const fitCheck: FitCheckContext = {
+    kind: "job-description",
+    jobDescription,
+    originalLength: jobDescription.length,
+    truncated: false,
+  };
+
+  const clientContext = JSON.parse(
+    JSON.stringify({
+      fixtureId: fixture.id,
+      fixtureLabel: fixture.label,
+      route: fixture.route,
+      context: {
+        ...fixture.context,
+        fitCheck,
+      },
+      packet: fixture.packet,
+    }),
+  ) as SendTurnPayload["clientContext"];
+
+  return {
+    message: [
+      "The visitor is asking for a fit-check against bounded job-description context supplied by the site.",
+      "Use only the client context and portfolio grounding for factual claims. Do not echo the pasted job description.",
+      `Visitor question: ${question}`,
+    ].join("\n"),
+    clientContext,
+  };
 }
 
 export function requireAny(reply: string | null, patterns: readonly RegExp[], label: string): void {
