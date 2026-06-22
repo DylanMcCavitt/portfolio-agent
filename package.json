@@ -10,7 +10,8 @@
     "build": "eve build",
     "dev": "eve dev",
     "start": "eve start",
-    "typecheck": "tsgo"
+    "typecheck": "tsgo",
+    "smoke:structured-output": "tsgo -p tsconfig.structured-smoke.json && node .tmp/structured-output-smoke/evals/structured-output-smoke.js"
   },
   "dependencies": {
     "ai": "7.0.0-beta.178",

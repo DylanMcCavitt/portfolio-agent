@@ -7,5 +7,6 @@ node_modules
 .output
 .nitro
 dist
+.tmp
 .DS_Store
 *.tsbuildinfo
