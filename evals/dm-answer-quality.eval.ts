@@ -1,6 +1,6 @@
 import { defineEval } from "eve/evals";
 
-import { getFixture, groundedPrompt, rejectPattern, requireAny } from "./fixtures.js";
+import { getFixture, groundedPrompt, rejectPattern, requireAny, requireWordLimit } from "./fixtures.js";
 
 export default [
   defineEval({
@@ -12,10 +12,11 @@ export default [
       t.messageIncludes(/Dylan/i);
       requireAny(t.reply, [/open to relevant opportunities/i, /open to work/i, /available/i], "availability status");
       requireAny(t.reply, [/dylanmccavitt@outlook\.com/i, /resume/i, /hiring/i, /contact/i], "contact route");
+      requireWordLimit(t.reply, 95, "contact answer");
     },
   }),
   defineEval({
-    description: "Strongest agent project answer names agentic-trader and explains why from context.",
+    description: "Strongest agent project answer names agentic-trader, explains why from context, and gives a next click.",
     tags: ["dm-answer-quality", "smoke"],
     async test(t) {
       await t.send(
@@ -27,6 +28,8 @@ export default [
       t.completed();
       t.messageIncludes(/agentic-trader/i);
       requireAny(t.reply, [/bounded tools/i, /operator review/i, /agentic trading workflow/i], "agentic-trader rationale");
+      requireAny(t.reply, [/\/projects\/agentic-trader/i, /project page/i, /next click/i], "grounded next click");
+      requireWordLimit(t.reply, 95, "strongest project answer");
     },
   }),
   defineEval({
@@ -38,6 +41,7 @@ export default [
       t.messageIncludes(/MCP/i);
       requireAny(t.reply, [/tradingview-mcp/i, /agentic-trader/i], "agent or MCP project");
       requireAny(t.reply, [/evalgate/i, /harness-arena/i, /quality/i, /evaluation/i], "agent quality evidence");
+      requireWordLimit(t.reply, 110, "agent and MCP answer");
     },
   }),
   defineEval({
@@ -58,6 +62,35 @@ export default [
         "finance caveat",
       );
       requireAny(t.reply, [/software/i, /infrastructure/i, /guardrails/i, /automation/i], "software framing");
+    },
+  }),
+  defineEval({
+    description: "Background answer uses the current-focus context and refuses unsupported resume facts.",
+    tags: ["dm-answer-quality", "smoke"],
+    async test(t) {
+      await t.send(
+        groundedPrompt(
+          getFixture("general"),
+          "What is Dylan's background, education, and employer history?",
+        ),
+      );
+      t.completed();
+      requireAny(
+        t.reply,
+        [/product-minded engineer/i, /agentic systems/i, /trading infrastructure/i, /iOS apps/i, /MCP tools/i],
+        "grounded background focus",
+      );
+      requireAny(
+        t.reply,
+        [/does not say/i, /not available/i, /not included/i, /not supported/i, /available site data/i],
+        "unsupported education or employer caveat",
+      );
+      rejectPattern(
+        t.reply,
+        /graduated from|studied at|worked at\s+[A-Z][A-Za-z]+|employed by\s+[A-Z][A-Za-z]+/i,
+        "invented school or employer facts",
+      );
+      requireWordLimit(t.reply, 105, "background answer");
     },
   }),
   defineEval({
@@ -92,6 +125,7 @@ export default [
       t.completed();
       requireAny(t.reply, [/\bDylan\b/i, /\bhe\b/i], "third-person subject");
       requireAny(t.reply, [/dog-log/i, /chore-ladder/i, /iOS/i, /mobile/i], "iOS project evidence");
+      requireWordLimit(t.reply, 105, "iOS/product answer");
       rejectPattern(
         t.reply,
         /\b(I|I.ve|we|we.ve|my)\s+(built|shipped|created|worked|designed|launched|made)\b/i,

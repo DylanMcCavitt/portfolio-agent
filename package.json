@@ -13,6 +13,7 @@
     "eval:ci": "eve eval --strict --max-concurrency 2 --junit .eve/junit.xml",
     "start": "eve start",
     "typecheck": "tsgo",
+    "smoke:dm-style": "tsgo -p tsconfig.dm-style-smoke.json && node .tmp/dm-style-smoke/evals/dm-response-style-smoke.js",
     "smoke:fit-check": "tsgo -p tsconfig.fit-check-smoke.json && node .tmp/fit-check-smoke/evals/fit-check-smoke.js",
     "smoke:structured-output": "tsgo -p tsconfig.structured-smoke.json && node .tmp/structured-output-smoke/evals/structured-output-smoke.js"
   },

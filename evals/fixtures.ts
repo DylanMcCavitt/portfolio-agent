@@ -221,3 +221,11 @@ export function rejectPattern(reply: string | null, pattern: RegExp, label: stri
     throw new Error(`Expected reply not to include ${label}. Reply: ${text}`);
   }
 }
+
+export function requireWordLimit(reply: string | null, maxWords: number, label: string): void {
+  const text = reply ?? "";
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount > maxWords) {
+    throw new Error(`Expected ${label} to stay under ${maxWords} words, got ${wordCount}. Reply: ${text}`);
+  }
+}
