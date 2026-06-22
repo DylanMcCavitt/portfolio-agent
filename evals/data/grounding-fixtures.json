@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "source": "portfolio-site-canonical-data",
+  "generatedFrom": ["src/data/catalog.ts", "src/data/resume.ts"],
+  "fixtures": [
+    {
+      "id": "general",
+      "label": "General portfolio question",
+      "message": "How should Dylan describe himself?",
+      "context": {},
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "general",
+        "projects": [],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Product-minded engineer building agentic systems, trading infrastructure, iOS apps, MCP tools, and practical shipped software.",
+          "about": "The site positions Dylan through concrete project artifacts and resume evidence rather than broad claims.",
+          "tracks": [
+            {
+              "id": "now",
+              "title": "Current focus",
+              "role": "Portfolio and agent systems",
+              "when": "Current",
+              "current": true,
+              "about": ["Building portfolio-grade agent, MCP, trading automation, and product artifacts."],
+              "notes": ["Use available site data for claims."],
+              "credits": [],
+              "era": "current"
+            }
+          ]
+        },
+        "remoteCall": {
+          "required": true,
+          "reason": "General questions may need the portfolio site context before making specific claims."
+        }
+      }
+    },
+    {
+      "id": "recruiter-contact",
+      "label": "Recruiter and contact context",
+      "message": "Is Dylan open to work, and how do I contact him?",
+      "context": {},
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "contact",
+        "projects": [
+          {
+            "id": "agentic-trader",
+            "title": "agentic-trader",
+            "area": "Agentic systems",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Agent-assisted trading workflow",
+            "line": "A portfolio artifact showing agentic trading workflow design, guardrails, and operator review.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/agentic-trader"]],
+            "metrics": ["agent workflow", "risk-aware automation"],
+            "about": ["Shows how Dylan designs agent systems around bounded tools, review, and evidence."],
+            "notes": ["Discuss as software infrastructure, not investment performance."],
+            "stack": ["Eve", "TypeScript", "MCP"]
+          },
+          {
+            "id": "bellas-beads",
+            "title": "Bella's Beads",
+            "area": "Shipped client work",
+            "status": ["shipped", "Shipped"],
+            "year": 2025,
+            "activity": "Client ecommerce site",
+            "line": "A shipped ecommerce project for a real client.",
+            "wip": false,
+            "money": false,
+            "links": [["Project page", "/projects/bellas-beads"]],
+            "metrics": ["client delivery", "commerce workflow"],
+            "about": ["Useful evidence for recruiters who want shipped client work."],
+            "notes": [],
+            "stack": ["Astro", "TypeScript"]
+          }
+        ],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Product-minded engineer building practical software artifacts.",
+          "about": "Recruiter routing should point to resume, contact, and strongest shipped systems.",
+          "tracks": [
+            {
+              "id": "now",
+              "title": "Current focus",
+              "role": "Software engineer and agent builder",
+              "when": "Current",
+              "current": true,
+              "about": ["Open to relevant software, agent, product, and automation conversations."],
+              "notes": ["Contact through the site contact route or resume."],
+              "credits": [
+                ["Email", "dylanmccavitt@outlook.com"],
+                ["Status", "Open to relevant opportunities"],
+                ["Location", "United States"]
+              ],
+              "era": "current"
+            }
+          ]
+        },
+        "remoteCall": {
+          "required": false,
+          "reason": "The contact fixture includes the recruiter contact block."
+        },
+        "contact": {
+          "email": "dylanmccavitt@outlook.com",
+          "location": "United States",
+          "status": "Open to relevant opportunities",
+          "resumeHref": "/resume.pdf",
+          "links": [
+            ["Email Dylan", "mailto:dylanmccavitt@outlook.com"],
+            ["Resume PDF", "/resume.pdf"],
+            ["Hiring tour", "/hiring"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "agent-mcp-work",
+      "label": "Agent and MCP work",
+      "message": "What should I look at for agent and MCP work?",
+      "context": {},
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "projects",
+        "projects": [
+          {
+            "id": "agentic-trader",
+            "title": "agentic-trader",
+            "area": "Agentic systems",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Agent-assisted trading workflow",
+            "line": "Agent workflow artifact with bounded tool use, review, and trading infrastructure context.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/agentic-trader"]],
+            "metrics": ["agent workflow", "operator review"],
+            "about": ["Best broad project for agentic workflow design."],
+            "notes": ["Use as software evidence."],
+            "stack": ["Eve", "TypeScript", "MCP"]
+          },
+          {
+            "id": "tradingview-mcp",
+            "title": "tradingview-mcp",
+            "area": "MCP tools",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "TradingView MCP integration",
+            "line": "An MCP tool surface for local TradingView review workflows.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/tradingview-mcp"]],
+            "metrics": ["MCP integration", "local chart review"],
+            "about": ["Shows practical MCP tooling around a real desktop workflow."],
+            "notes": ["Does not place trades."],
+            "stack": ["MCP", "TypeScript"]
+          },
+          {
+            "id": "evalgate",
+            "title": "evalgate",
+            "area": "Agent quality",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Agent evaluation gate",
+            "line": "A quality gate concept for agent output review.",
+            "wip": true,
+            "money": false,
+            "links": [["Project page", "/projects/evalgate"]],
+            "metrics": ["evals", "regression proof"],
+            "about": ["Useful evidence for testing and reviewing agent behavior."],
+            "notes": [],
+            "stack": ["TypeScript", "Evals"]
+          },
+          {
+            "id": "harness-arena",
+            "title": "harness-arena",
+            "area": "Agent harnesses",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Harness comparison artifact",
+            "line": "A harness-focused artifact for comparing agent workflow behavior.",
+            "wip": true,
+            "money": false,
+            "links": [["Project page", "/projects/harness-arena"]],
+            "metrics": ["harness comparison", "workflow proof"],
+            "about": ["Shows Dylan's interest in repeatable agent workflow evaluation."],
+            "notes": [],
+            "stack": ["TypeScript"]
+          }
+        ],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Engineer focused on agentic systems and practical tools.",
+          "about": "Agent and MCP questions should route to concrete projects.",
+          "tracks": []
+        },
+        "remoteCall": {
+          "required": false,
+          "reason": "The fixture includes agent and MCP project summaries."
+        }
+      }
+    },
+    {
+      "id": "trading-finance-automation",
+      "label": "Trading and finance automation",
+      "message": "Which projects show trading and finance automation?",
+      "context": {},
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "projects",
+        "projects": [
+          {
+            "id": "tastytrade-exit-manager",
+            "title": "tastytrade-exit-manager",
+            "area": "Trading infrastructure",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Broker workflow automation",
+            "line": "Automation around exit management, guardrails, and operator review.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/tastytrade-exit-manager"]],
+            "metrics": ["exit workflow", "guardrails"],
+            "about": ["Shows trading infrastructure and risk-aware automation."],
+            "notes": ["Not financial advice and not a recommendation to trade."],
+            "stack": ["TypeScript", "Broker APIs"]
+          },
+          {
+            "id": "hood",
+            "title": "hood",
+            "area": "Trading infrastructure",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Broker data and automation surface",
+            "line": "A trading workflow support project for broker data and automation.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/hood"]],
+            "metrics": ["broker data", "workflow automation"],
+            "about": ["Shows practical finance automation software."],
+            "notes": ["Discuss as tooling, not trading advice."],
+            "stack": ["TypeScript"]
+          },
+          {
+            "id": "agentic-trader",
+            "title": "agentic-trader",
+            "area": "Agentic trading systems",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Agent-assisted trading workflow",
+            "line": "Agent workflow around trading infrastructure, bounded tools, and review.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/agentic-trader"]],
+            "metrics": ["agent workflow", "trading infrastructure"],
+            "about": ["Shows the agent side of trading automation."],
+            "notes": ["No financial recommendations."],
+            "stack": ["Eve", "MCP", "TypeScript"]
+          }
+        ],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Engineer building trading infrastructure as software artifacts.",
+          "about": "Trading content should stay framed as systems and guardrails.",
+          "tracks": []
+        },
+        "remoteCall": {
+          "required": false,
+          "reason": "The fixture includes trading and finance project summaries."
+        }
+      }
+    },
+    {
+      "id": "ios-product-work",
+      "label": "iOS and product work",
+      "message": "Can he ship iOS or mobile product work?",
+      "context": {},
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "projects",
+        "projects": [
+          {
+            "id": "dog-log",
+            "title": "dog-log",
+            "area": "iOS product work",
+            "status": ["shipped", "Shipped"],
+            "year": 2025,
+            "activity": "iOS app",
+            "line": "A mobile product artifact focused on everyday logging workflows.",
+            "wip": false,
+            "money": false,
+            "links": [["Project page", "/projects/dog-log"]],
+            "metrics": ["iOS", "mobile product"],
+            "about": ["Shows Dylan can shape a small mobile product experience."],
+            "notes": [],
+            "stack": ["Swift", "SwiftUI"]
+          },
+          {
+            "id": "chore-ladder",
+            "title": "chore-ladder",
+            "area": "iOS product work",
+            "status": ["shipped", "Shipped"],
+            "year": 2025,
+            "activity": "Mobile product app",
+            "line": "A shipped app-style product workflow around chores and progression.",
+            "wip": false,
+            "money": false,
+            "links": [["Project page", "/projects/chore-ladder"]],
+            "metrics": ["mobile UX", "product workflow"],
+            "about": ["Shows product thinking beyond agent and trading work."],
+            "notes": [],
+            "stack": ["Swift", "SwiftUI"]
+          }
+        ],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Engineer with iOS, product, and agent-system artifacts.",
+          "about": "Use third-person voice when describing Dylan's work.",
+          "tracks": []
+        },
+        "remoteCall": {
+          "required": false,
+          "reason": "The fixture includes iOS and mobile product project summaries."
+        }
+      }
+    },
+    {
+      "id": "shipped-client-work",
+      "label": "Shipped client work",
+      "message": "Show me shipped client ecommerce work.",
+      "context": {},
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "projects",
+        "projects": [
+          {
+            "id": "bellas-beads",
+            "title": "Bella's Beads",
+            "area": "Shipped client work",
+            "status": ["shipped", "Shipped"],
+            "year": 2025,
+            "activity": "Client ecommerce delivery",
+            "line": "A shipped ecommerce project for a real client.",
+            "wip": false,
+            "money": false,
+            "links": [["Project page", "/projects/bellas-beads"]],
+            "metrics": ["shipped client site", "ecommerce"],
+            "about": ["Useful evidence that Dylan can ship client-facing software."],
+            "notes": [],
+            "stack": ["Astro", "TypeScript"]
+          }
+        ],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Engineer with shipped client and product work.",
+          "about": "Recruiter answers should include shipped work when relevant.",
+          "tracks": []
+        },
+        "remoteCall": {
+          "required": false,
+          "reason": "The fixture includes shipped client work."
+        }
+      }
+    },
+    {
+      "id": "project-page-agentic-trader",
+      "label": "Explicit project-page context",
+      "message": "Tell me about agentic-trader.",
+      "context": {
+        "projectIds": ["agentic-trader"],
+        "resumeTrackIds": ["now"]
+      },
+      "route": "/projects/agentic-trader",
+      "packet": {
+        "version": 1,
+        "source": "portfolio-site-canonical-data",
+        "focus": "projects",
+        "projects": [
+          {
+            "id": "agentic-trader",
+            "title": "agentic-trader",
+            "area": "Agentic systems",
+            "status": ["active", "In progress"],
+            "year": 2026,
+            "activity": "Agent-assisted trading workflow",
+            "line": "A portfolio artifact for agentic trading workflow design, bounded tools, operator review, and trading infrastructure.",
+            "wip": true,
+            "money": true,
+            "links": [["Project page", "/projects/agentic-trader"]],
+            "metrics": ["agent workflow", "bounded tools", "operator review"],
+            "about": ["The project demonstrates Dylan's interest in practical agent systems over demo chatbots."],
+            "notes": ["Frame as workflow and infrastructure, not financial advice."],
+            "stack": ["Eve", "MCP", "TypeScript"]
+          }
+        ],
+        "resume": {
+          "title": "Dylan McCavitt",
+          "line": "Product-minded engineer building agentic systems.",
+          "about": "Current focus includes agent and portfolio infrastructure.",
+          "tracks": [
+            {
+              "id": "now",
+              "title": "Current focus",
+              "role": "Agent and portfolio systems",
+              "when": "Current",
+              "current": true,
+              "about": ["Building agentic systems with bounded tools, state, evals, and deployment boundaries."],
+              "notes": ["Use project evidence rather than invented claims."],
+              "credits": [],
+              "era": "current"
+            }
+          ]
+        },
+        "remoteCall": {
+          "required": false,
+          "reason": "The project-page fixture is already scoped to agentic-trader."
+        }
+      }
+    }
+  ]
+}

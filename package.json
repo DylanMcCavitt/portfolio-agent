@@ -9,6 +9,8 @@
   "scripts": {
     "build": "eve build",
     "dev": "eve dev",
+    "eval": "eve eval --max-concurrency 2",
+    "eval:ci": "eve eval --strict --max-concurrency 2 --junit .eve/junit.xml",
     "start": "eve start",
     "typecheck": "tsgo"
   },
