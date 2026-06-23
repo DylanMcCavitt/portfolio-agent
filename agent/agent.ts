@@ -1,8 +1,8 @@
 import { defineAgent } from "eve";
 
-const DEFAULT_MODEL = "openai/gpt-5-nano";
+import { resolveAgentModel } from "./model-config.js";
 
 export default defineAgent({
-  // Keep the small gateway model as the default for low-cost, low-latency portfolio Q&A.
-  model: DEFAULT_MODEL,
+  // Keep DM model selection in agent config/env, not in the portfolio site.
+  model: resolveAgentModel(),
 });
