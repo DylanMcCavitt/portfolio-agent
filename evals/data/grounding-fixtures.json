@@ -15,7 +15,7 @@
         "projects": [],
         "resume": {
           "title": "Dylan McCavitt",
-          "line": "Product-minded engineer building agentic systems, trading infrastructure, iOS apps, MCP tools, and practical shipped software.",
+          "line": "Software engineer currently focused on whatever is next, deep into AI workflows and agents, and building anything from production projects, apps, and products to side projects that make something new easier to learn.",
           "about": "The site positions Dylan through concrete project artifacts and resume evidence rather than broad claims.",
           "tracks": [
             {
@@ -24,7 +24,9 @@
               "role": "Portfolio and agent systems",
               "when": "Current",
               "current": true,
-              "about": ["Building portfolio-grade agent, MCP, trading automation, and product artifacts."],
+              "about": [
+                "Deep into AI workflows and agents, building across production projects, apps, products, side projects, and anything useful for learning something new through building."
+              ],
               "notes": ["Use available site data for claims."],
               "credits": [],
               "era": "current"
